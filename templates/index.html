@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+</head>
+<body>
+    <h1>ID Maker</h1>
+
+    <h3>Select Front Image</h3>
+    <input type="file" id="frontImageInput" accept="image/*">
+    <div>
+        <img id="frontImage" src="#" alt="Front Image" style="display:none;">
+    </div>
+
+    <h3>Select Back Image</h3>
+    <input type="file" id="backImageInput" accept="image/*">
+    <div>
+        <img id="backImage" src="#" alt="Back Image" style="display:none;">
+    </div>
+
+    <button id="previewBtn">Preview ID</button>
+    <div id="previewContainer" style="display:none;">
+        <h3>Preview</h3>
+        <img id="previewImage" src="#" alt="Preview Image" style="max-width: 100%; height: auto;">
+        <br>
+        <button id="downloadJpgBtn">Download as JPEG</button>
+        <button id="downloadPdfBtn">Download as PDF</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
