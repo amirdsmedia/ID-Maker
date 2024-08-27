@@ -11,6 +11,11 @@ def index():
 @app.route('/generate_jpg', methods=['POST'])
 def generate_jpg():
     image = Image.open(request.files['image'])
+    
+    # Convert RGBA to RGB if necessary
+    if image.mode == 'RGBA':
+        image = image.convert('RGB')
+    
     img_io = BytesIO()
     image.save(img_io, 'JPEG', quality=100)
     img_io.seek(0)
