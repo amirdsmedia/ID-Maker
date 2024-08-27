@@ -25,4 +25,4 @@ def generate_pdf():
     return send_file(pdf_io, mimetype='application/pdf', as_attachment=True, download_name='id_card.pdf')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False,host='0.0.0.0')
